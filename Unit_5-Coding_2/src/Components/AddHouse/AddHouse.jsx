@@ -1,4 +1,18 @@
 export const AddHouse = () => {
+  const submit = () => {
+    try {
+      fetch("http://localhost:8080/houses", {
+        method: "POST",
+        body: JSON.stringify(),
+        header: {
+          "content-type": "application/json",
+        },
+      });
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
   return (
     <div className="addHouseContainer">
       <form>
