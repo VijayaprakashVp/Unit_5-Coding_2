@@ -1,3 +1,14 @@
 {
-  "Houses": []
+  "Houses": [
+    {
+      "name": "Vijayaprakash",
+      "ownerName": "Vijayaprakash",
+      "address": "Tirupur",
+      "areaCode": "641604",
+      "rent": "5000",
+      "bachelor": "bachelor",
+      "image": "",
+      "id": 1
+    }
+  ]
 }

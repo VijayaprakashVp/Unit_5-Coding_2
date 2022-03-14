@@ -1,6 +1,25 @@
+import { useEffect, useState } from "react";
 import "./Rentals.css";
 
 export const Rentals = () => {
+  const [showlist, setShowlist] = useState([]);
+  const display = () => {
+    try {
+      fetch("http://localhost:8080/Houses")
+        .then((res) => res.json())
+        .then((data) => {
+          setShowlist(data);
+          //   console.log("data:", data);
+        });
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
+  useEffect(() => {
+    display();
+  }, []);
+
   return (
     <div className="rentalContainer">
       <div className="sortingButtons">
@@ -29,7 +48,7 @@ export const Rentals = () => {
           </tr>
         </thead>
         <tbody>
-          {[].map((house, index) => {
+          {showlist.map((house, index) => {
             return (
               <tr key={house.id} className="houseDetails">
                 <td className="houseId">{house.id}</td>
